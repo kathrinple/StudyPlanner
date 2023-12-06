@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Semesterplan erstellen (2/2)</title>
+  </head>
+
+  <body>
+    <header>
+      <img src="logo.png" alt=" Semesterplan-Logo" width="100" height="100" />
+      <h1>Web-Anwendung für Semesterpläne</h1>
+    </header>
+
+    <nav>
+      <a href="index.html">Startseite</a>
+      <a href="plan.html">Semesterpläne</a>
+      <a href="kurs.html">Kursdetails</a>
+      <a href="plan-neu-schritt1.html">Semesterplan erstellen</a>
+    </nav>
+    <main>
+      <!-- Hauptinhalt der Seite -->
+      <h1>Semesterplan erstellen (2/2)</h1>
+
+      <form
+        action="https://labs.inf.fh-dortmund.de/planService/testCreatePlan.php"
+        method="post"
+      >
+        <fieldset>
+          <legend>Informationen zum Semesterplan:</legend>
+
+          <label for="name">Name:</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            pattern="[a-zA-Z0-9-]+"
+            required
+            maxlength="150"
+            placeholder="Maximal 150 Zeichen"
+          />
+
+          <label for="semester">Semester:</label>
+          <select id="semester" name="semester">
+            <option value="sommersemester">Sommersemester</option>
+            <option value="wintersemester">Wintersemester</option>
+          </select>
+
+          <label for="jahr">Jahr:</label>
+          <input
+            type="number"
+            id="jahr"
+            name="jahr"
+            required
+            min="1900"
+            max="2099"
+            value="2022"
+            placeholder="YYYY"
+          />
+
+          <label for="kurse">Kurse:</label>
+          <select id="kurse" name="kurse" multiple required>
+            <option value="web-tech">Web-Technologien</option>
+            <option value="datenbanken">Datenbanken</option>
+            <option value="algorithmen">Algorithmen</option>
+            <!-- Weitere Kurse hier -->
+          </select>
+        </fieldset>
+
+        <button type="submit">Absenden</button>
+      </form>
+    </main>
+    <hr />
+    <aside>
+      <h2>Aktuelle Meldung</h2>
+      <ul>
+        <li>Aktuelle Meldung 1</li>
+        <li>Aktuelle Meldung 2</li>
+        <!-- Weitere Meldungen hier -->
+      </ul>
+    </aside>
+
+    <footer>
+      <p>&copy; 2023 Soufian Bouzarrag, Kathrin Pleuger, Hüseyin Türk</p>
+    </footer>
+  </body>
+</html>

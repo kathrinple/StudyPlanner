@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Semesterplan erstellen (1/2)</title>
+  </head>
+
+  <body>
+    <header>
+      <img src="logo.png" alt=" Semesterplan-Logo" width="100" height="100" />
+      <h1>Web-Anwendung für Semesterpläne</h1>
+    </header>
+
+    <nav>
+      <a href="index.html">Startseite</a>
+      <a href="plan.html">Semesterpläne</a>
+      <a href="kurs.html">Kursdetails</a>
+      <a href="plan-neu-schritt1.html">Semesterplan erstellen</a>
+    </nav>
+
+    <main>
+      <!-- Hauptinhalt der Seite -->
+      <h1>Semesterplan erstellen (1/2)</h1>
+
+      <form action="plan-neu-schritt2.html" method="get">
+        <fieldset>
+          <legend>Studiengang auswählen:</legend>
+          <label for="studiengang">Studiengang:</label>
+          <select id="studiengang" name="studiengang" required>
+            <option value="" disabled selected hidden>Bitte auswählen</option>
+            <!-- Erster Option Wert darf ein Value haben, so wird sichergestellt, dass der Benutzer eine bewusste Auswahl treffen muss -->
+            <option value="praktische-informatik">Praktische Informatik</option>
+            <option value="technische-informatik">Technische Informatik</option>
+            <option value="data-science">Data Science</option>
+            <option value="medizinische-informatik">
+              Medizinische Informatik
+            </option>
+            <option value="medizinische-informatik-dual">
+              Medizinische Informatik dual
+            </option>
+            <option value="sst-dual-softwaretechnik">
+              SST dual (Softwaretechnik)
+            </option>
+            <option value="sst-dual-systemtechnik">
+              SST dual (Systemtechnik)
+            </option>
+            <option value="informatik-dual-softwaretechnik">
+              Informatik dual (Softwaretechnik)
+            </option>
+            <option value="informatik-dual-netztechnik">
+              Informatik dual (Netztechnik und Systemintegration)
+            </option>
+            <option value="wirtschaftsinformatik">Wirtschaftsinformatik</option>
+          </select>
+        </fieldset>
+        <button type="submit">Weiter</button>
+      </form>
+    </main>
+    <hr />
+    <aside>
+      <h2>Aktuelle Meldung</h2>
+      <ul>
+        <li>Aktuelle Meldung 1</li>
+        <li>Aktuelle Meldung 2</li>
+        <!-- Weitere Meldungen hier -->
+      </ul>
+    </aside>
+
+    <footer>
+      <p>&copy; 2023 Soufian Bouzarrag, Kathrin Pleuger, Hüseyin Türk</p>
+    </footer>
+  </body>
+</html>
