@@ -1,5 +1,5 @@
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; /* Schriftart festlegen */
+  font-family: "Helvetica", "Helvetica Neue", "Arial", sans-serif; /* Schriftart festlegen */
 }
 
 /* Überschriften */
@@ -30,14 +30,48 @@ button {
 
 /* NavBar */
 nav {
-  background-color: #003366;
   text-align: center;
   border-radius: 5px;
+  width: 35%;
+  margin: 0 auto; /* Auto-Margin für die Zentrierung */
 }
 nav a {
+  background-color: #003366;
   color: white;
   text-decoration: none;
   padding: 10px;
+  margin-right: 5px;
+  display: inline-block; /* Macht die Links zu Blockelementen, um Breite und Höhe anzupassen */
+}
+nav a:hover {
+  background-color: #078eee; /* Hintergrundfarbe beim Hover */
+  font-size: 20px; /* Schriftgröße beim Hover */
+}
+
+/* Formatierung der Tabellenzeilen Planseite_table  */
+/* Tabelle der gewählten Kurse */
+.Planseite_table {
+  border-collapse: collapse; /* "Zusammenführung" von Zellengrenzen -> dass benachbarte Zellengrenzen verschmelzen miteinander als eine einzige Linie dargestellt werden */
+  width: 100%;
+}
+
+.Planseite_table,
+th,
+td {
+  border: 1px solid rgb(118, 114, 114); /* Sichtbare Ränder */
+  padding: 8px;
+  text-align: left;
+}
+
+/* Farbliche Hervorhebung für jede zweite Zeile und Tabellenkopf */
+.Planseite_table tr:nth-child(even) {
+  background-color: #d4f4cb; /* Hellgraue Hintergrundfarbe */
+}
+
+.Planseite_table th {
+  text-align: center;
+  background-color: #4caf50; /* Dunkelgrüne Hintergrundfarbe für Tabellenkopf */
+  color: white; /* Weiße Schriftfarbe für Tabellenkopf */
 }
 
 /* Zusatzinformationen */
@@ -45,6 +79,7 @@ aside {
   background-color: #003366;
   border-radius: 5px;
   padding: 5px;
+  border-style: solid;
 }
 
 aside h3 {
