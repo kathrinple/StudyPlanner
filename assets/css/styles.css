@@ -2,6 +2,23 @@ body {
   font-family: "Helvetica", "Helvetica Neue", "Arial", sans-serif; /* Schriftart festlegen */
 }
 
+/* Logo und Titel nebeneinander positionieren */
+header {
+  display: flex;
+  align-items: center;
+  background-color: white;
+}
+
+header img {
+  margin-right: 10px;
+}
+
+/* Scrollverhalten für die Navbar */
+nav {
+  position: sticky;
+  top: 5px;
+}
+
 /* Überschriften */
 h1 {
   color: #ff8800;
@@ -93,4 +110,9 @@ aside ul {
 /* Footer */
 footer {
   text-align: center;
+  position: sticky;
+  bottom: 0;
+  background-color: white;
+  width: 100%;
+  padding: 4px;
 }
