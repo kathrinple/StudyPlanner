@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <title>Semesterplan erstellen (1/2)</title>
     <link rel="stylesheet" type="text/css" href="assets/css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/forms.css" />
   </head>
 
   <body>
@@ -30,34 +31,42 @@
 
       <form action="plan-neu-schritt2.html" method="get">
         <fieldset>
-          <legend>Studiengang auswählen:</legend>
-          <label for="studiengang">Studiengang:</label>
-          <select id="studiengang" name="studiengang" required>
-            <option value="" disabled selected hidden>Bitte auswählen</option>
-            <!-- Erster Option Wert darf ein Value haben, so wird sichergestellt, dass der Benutzer eine bewusste Auswahl treffen muss -->
-            <option value="praktische-informatik">Praktische Informatik</option>
-            <option value="technische-informatik">Technische Informatik</option>
-            <option value="data-science">Data Science</option>
-            <option value="medizinische-informatik">
-              Medizinische Informatik
-            </option>
-            <option value="medizinische-informatik-dual">
-              Medizinische Informatik dual
-            </option>
-            <option value="sst-dual-softwaretechnik">
-              SST dual (Softwaretechnik)
-            </option>
-            <option value="sst-dual-systemtechnik">
-              SST dual (Systemtechnik)
-            </option>
-            <option value="informatik-dual-softwaretechnik">
-              Informatik dual (Softwaretechnik)
-            </option>
-            <option value="informatik-dual-netztechnik">
-              Informatik dual (Netztechnik und Systemintegration)
-            </option>
-            <option value="wirtschaftsinformatik">Wirtschaftsinformatik</option>
-          </select>
+          <legend>Studiengang auswählen</legend>
+          <div class="input-field">
+            <label for="studiengang">Studiengang:</label>
+            <select id="studiengang" name="studiengang" required>
+              <option value="" disabled selected hidden>Bitte auswählen</option>
+              <!-- Erster Option Wert darf ein Value haben, so wird sichergestellt, dass der Benutzer eine bewusste Auswahl treffen muss -->
+              <option value="praktische-informatik">
+                Praktische Informatik
+              </option>
+              <option value="technische-informatik">
+                Technische Informatik
+              </option>
+              <option value="data-science">Data Science</option>
+              <option value="medizinische-informatik">
+                Medizinische Informatik
+              </option>
+              <option value="medizinische-informatik-dual">
+                Medizinische Informatik dual
+              </option>
+              <option value="sst-dual-softwaretechnik">
+                SST dual (Softwaretechnik)
+              </option>
+              <option value="sst-dual-systemtechnik">
+                SST dual (Systemtechnik)
+              </option>
+              <option value="informatik-dual-softwaretechnik">
+                Informatik dual (Softwaretechnik)
+              </option>
+              <option value="informatik-dual-netztechnik">
+                Informatik dual (Netztechnik und Systemintegration)
+              </option>
+              <option value="wirtschaftsinformatik">
+                Wirtschaftsinformatik
+              </option>
+            </select>
+          </div>
         </fieldset>
         <button type="submit">Weiter</button>
       </form>

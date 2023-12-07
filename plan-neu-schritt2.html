@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <title>Semesterplan erstellen (2/2)</title>
     <link rel="stylesheet" type="text/css" href="assets/css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/forms.css" />
   </head>
 
   <body>
@@ -32,38 +33,45 @@
         method="post"
       >
         <fieldset>
-          <legend>Informationen zum Semesterplan:</legend>
+          <legend>Basisdaten</legend>
+          <div class="input-field">
+            <label for="name">Name:</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              pattern="[a-zA-Z0-9-]+"
+              maxlength="150"
+              placeholder="Maximal 150 Zeichen"
+              required
+            />
+          </div>
+        </fieldset>
 
-          <label for="name">Name:</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            pattern="[a-zA-Z0-9-]+"
-            maxlength="150"
-            placeholder="Maximal 150 Zeichen"
-            required
-          />
-
-          <label for="semester">Semester:</label>
+        <fieldset>
+          <legend><label for="semester">Semester</label></legend>
           <select id="semester" name="semester">
             <option value="Sommersemester" selected>Sommersemester</option>
             <option value="Wintersemester">Wintersemester</option>
           </select>
 
-          <label for="jahr">Jahr:</label>
-          <input
-            type="number"
-            id="jahr"
-            name="jahr"
-            required
-            min="1900"
-            max="2099"
-            value="2022"
-            placeholder="YYYY"
-          />
+          <div class="input-field">
+            <label for="jahr">Jahr:</label>
+            <input
+              type="number"
+              id="jahr"
+              name="jahr"
+              required
+              min="1900"
+              max="2099"
+              value="2023"
+              placeholder="YYYY"
+            />
+          </div>
+        </fieldset>
 
-          <label>Kurse:</label>
+        <fieldset>
+          <legend><label>Kurse</label></legend>
           <p>
             <input
               type="checkbox"

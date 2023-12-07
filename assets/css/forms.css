@@ -1,0 +1,54 @@
+/* Darstellung ungültiger Eingaben */
+input:invalid,
+textarea:invalid {
+  border: 2px solid #ff4343; /* Roter Rahmen für ungültige Eingaben */
+}
+
+/* Hervorhebung bei Fokus */
+input[type="text"]:focus {
+  background-color: rgb(121, 192, 231); /* Hellblauer Hintergrund bei Fokus */
+}
+
+/* Hervorhebung bei Fokus */
+input[type="number"]:focus {
+  background-color: rgb(121, 192, 231); /* Hellblauer Hintergrund bei Fokus */
+}
+
+/* Styling für Absenden-Buttons */
+button[type="submit"] {
+  background-color: #4caf50; /* Grüne Hintergrundfarbe für Absenden-Buttons */
+  color: white; /* Weiße Schriftfarbe */
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px; /* Runde Ecken */
+  cursor: pointer;
+  transition: background-color 0.5s; /* Farbübergang */
+}
+
+/* Hover-Effekt für Absenden-Buttons */
+button[type="submit"]:hover {
+  background-color: #45a049; /* Dunkelgrün beim Hover */
+}
+
+/* Zeichenkette für erforderliche Eingaben */
+.input-field::after {
+  content: " (erforderlich)";
+}
+
+legend {
+  padding: 5px 10px; /* Innenabstand für legend */
+  background-color: #faab33; /* Hellgrauer Hintergrund */
+  border: 1px solid #000000; /* Grauer Rand oben und links */
+  border-radius: 5px; /* Runde Ecken */
+  text-transform: uppercase; /* Großbuchstaben für Text */
+}
+
+fieldset {
+  border-width: 1px 0px 0px 1px;
+  border-radius: 5px; /* Runde Ecken */
+}
+
+#name,
+#jahr {
+  border-width: 1px 0px 0px 1px;
+}

@@ -1,3 +1,7 @@
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; /* Schriftart festlegen */
+}
+
 /* Überschriften */
 h1 {
   color: #ff8800;
