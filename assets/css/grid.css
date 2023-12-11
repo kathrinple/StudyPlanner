@@ -1,3 +1,4 @@
+/* Das Gesamt-Grid-Layout */
 #grid {
   display: grid;
   grid-template-areas:
@@ -8,6 +9,7 @@
   grid-template-columns: 75% 25%;
 }
 
+/* Header-Styling */
 header {
   grid-area: header;
   display: grid;
@@ -15,33 +17,61 @@ header {
   align-items: center;
 }
 
+/* Logo links im Header */
 header img {
   grid-column: 1;
 }
 
+/* Überschrift rechts im Header */
 header h1 {
   grid-column: 2;
   justify-self: start;
 }
 
+/* NavBar-Styling */
 nav {
   grid-area: nav;
   display: grid;
   justify-content: center;
   align-items: center;
-  grid-auto-flow: column;
-  gap: 5px;
+  grid-auto-flow: column; /* NavBar in einer Zeile anzeigen */
+  gap: 5px; /* Abstand zwischen den NavLinks */
   justify-items: center;
 }
 
+/* Hauptinhalt in grid template benennen */
 main {
   grid-area: haupt;
 }
 
+/* SideBar in grid template benennen */
 aside {
   grid-area: aside;
 }
 
+/* Footer in grid template benennen */
 footer {
   grid-area: footer;
+}
+
+/* Media Queries */
+/* Media Query für kleine Bildschirme (max-width: 900px) */
+@media screen and (max-width: 900px) {
+  nav {
+    grid-auto-flow: row; /* NavBar in einer Spalte anzeigen */
+    grid-template-columns: repeat(
+      3,
+      auto
+    ); /* 3 NavLinks pro Zeile => 3 Spalten */
+  }
+}
+
+/* Media Query für noch kleinere Bildschirme (max-width: 700px) */
+@media screen and (max-width: 700px) {
+  nav {
+    grid-template-columns: repeat(
+      2,
+      auto
+    ); /* 2 NavLinks pro Zeile => 2 Spalten */
+  }
 }
