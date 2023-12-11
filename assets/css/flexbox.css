@@ -7,7 +7,9 @@ header {
 nav {
   display: flex; /* Macht nav zu einem Flex-Container */
   flex-wrap: wrap; /* Flex-Elemente im Container werden umgebrochen */
-  justify-content: flex-start; /* Ausrichtung der Flex-Elemente im Flex-Container steuern -> flex-start an die Hauptachse (linksbündig)*/
+  gap: 5px;
+  align-items: center;
+  justify-content: center; /* Ausrichtung der Flex-Elemente im Flex-Container steuern -> flex-start an die Hauptachse (linksbündig)*/
 }
 
 main {

@@ -38,18 +38,12 @@ button {
 
 /* NavBar */
 nav {
-  position: sticky; /* Scrollverhalten für die Navbar */
-  top: 5px;
-
-  text-align: center;
-  border-radius: 5px;
-  width: 70%; /* Breite des nav-Bereichs */
-  margin: 0 auto 30px; /* Auto-Margin für die Zentrierung */
-}
-#navbar {
   height: 50px;
-
-  background-color: aquamarine;
+  background-color: white;
+  position: sticky; /* Scrollverhalten für die Navbar */
+  top: 0px;
+  width: 100%; /* Breite des nav-Bereichs */
+  margin-bottom: 30px;
 }
 
 nav a {
@@ -60,7 +54,6 @@ nav a {
   color: white;
   text-decoration: none;
   padding: 10px;
-  margin: 5px;
   display: inline-block; /* Macht die Links zu Blockelementen, um Breite und Höhe anzupassen */
   transition: background-color 0.3s, font-size 0.3s; /*Übergang der Schrift und Farbe langsamer*/
   text-align: center;

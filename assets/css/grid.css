@@ -9,9 +9,27 @@
 }
 header {
   grid-area: header;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
 }
-#navbar {
+
+header img {
+  grid-column: 1;
+}
+
+header h1 {
+  grid-column: 2;
+  justify-self: start;
+}
+nav {
   grid-area: nav;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-auto-flow: column;
+  gap: 5px;
+  justify-items: center;
 }
 main {
   grid-area: haupt;
