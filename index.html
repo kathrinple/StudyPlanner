@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Semesterpläne</title>
     <link rel="stylesheet" type="text/css" href="assets/css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/flexbox.css" />
   </head>
 
   <body>
@@ -18,51 +19,58 @@
       <h1>Web-Anwendung für Semesterpläne</h1>
     </header>
 
-    <nav>
-      <a href="index.html">Startseite</a>
-      <a href="plan.html">Semesterpläne</a>
-      <a href="kurs.html">Kursdetails</a>
-      <a href="plan-neu-schritt1.html">neuer Semsterplan</a>
-    </nav>
+    <div id="navbar">
+      <nav>
+        <a href="index.html">Startseite</a>
+        <a href="plan.html">Semesterpläne</a>
+        <a href="kurs.html">Kursdetails</a>
+        <a href="plan-neu-schritt1.html">neuer Semsterplan</a>
+      </nav>
+    </div>
 
-    <main>
-      <!-- Hauptinhalt der Seite -->
-      <h2>Semesterpläne</h2>
+    <div id="flexbox">
+      <main>
+        <!-- Hauptinhalt der Seite -->
+        <h2>Semesterpläne</h2>
 
-      <section>
-        <h2>Semester 1</h2>
+        <section>
+          <h2>Semester 1</h2>
+          <ul>
+            <li>
+              <a href="plan.html#wi-plan">WI-Plan</a> (4 Kurse, 7 Stunden)
+            </li>
+            <li>
+              <a href="plan.html#mi-plan">MI-Plan</a> (6 Kurse, 11 Stunden)
+            </li>
+            <!-- Weitere Semesterpläne hier -->
+          </ul>
+        </section>
+        <hr />
+        <section>
+          <h2>Semester 2</h2>
+          <ul>
+            <li><a href="#">WI-Plan</a> (5 Kurse, 9 Stunden)</li>
+            <li><a href="#">MI-Plan</a> (5 Kurse, 9 Stunden)</li>
+            <!-- Weitere Semesterpläne hier -->
+          </ul>
+        </section>
+      </main>
+
+      <aside>
+        <h2>Aktuelle Meldung</h2>
         <ul>
-          <li><a href="plan.html#wi-plan">WI-Plan</a> (4 Kurse, 7 Stunden)</li>
-          <li><a href="plan.html#mi-plan">MI-Plan</a> (6 Kurse, 11 Stunden)</li>
-          <!-- Weitere Semesterpläne hier -->
+          <li>
+            22.05.2025: Die Vorlesung zu "Web-Technologien" findet am kommenden
+            Mittwoch abweichend in der Westfalenhalle 1 statt.
+          </li>
+          <li>
+            16.04.2025: Die Veranstaltung "Lineare Algebra" muss in dieser Woche
+            leider krankheitsbedingt entfallen.
+          </li>
+          <!-- Weitere Meldungen hier -->
         </ul>
-      </section>
-      <hr />
-      <section>
-        <h2>Semester 2</h2>
-        <ul>
-          <li><a href="#">WI-Plan</a> (5 Kurse, 9 Stunden)</li>
-          <li><a href="#">MI-Plan</a> (5 Kurse, 9 Stunden)</li>
-          <!-- Weitere Semesterpläne hier -->
-        </ul>
-      </section>
-    </main>
-    <hr />
-    <aside>
-      <h2>Aktuelle Meldung</h2>
-      <ul>
-        <li>
-          22.05.2025: Die Vorlesung zu "Web-Technologien" findet am kommenden
-          Mittwoch abweichend in der Westfalenhalle 1 statt.
-        </li>
-        <li>
-          16.04.2025: Die Veranstaltung "Lineare Algebra" muss in dieser Woche
-          leider krankheitsbedingt entfallen.
-        </li>
-        <!-- Weitere Meldungen hier -->
-      </ul>
-    </aside>
-
+      </aside>
+    </div>
     <footer>
       <p>&copy; 2023 Soufian Bouzarrag, Kathrin Pleuger, Hüseyin Türk</p>
     </footer>

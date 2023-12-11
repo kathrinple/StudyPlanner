@@ -1,0 +1,26 @@
+#grid {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "nav nav"
+    "haupt aside"
+    "footer footer";
+  grid-template-columns: 75% 25%;
+}
+header {
+  grid-area: header;
+}
+#navbar {
+  grid-area: nav;
+}
+main {
+  grid-area: haupt;
+}
+
+aside {
+  grid-area: aside;
+}
+
+footer {
+  grid-area: footer;
+}

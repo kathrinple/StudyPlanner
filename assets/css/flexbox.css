@@ -1,0 +1,22 @@
+/* Logo und Titel nebeneinander positionieren */
+header {
+  display: flex;
+  align-items: center;
+}
+
+nav {
+  display: flex; /* Macht nav zu einem Flex-Container */
+  flex-wrap: wrap; /* Flex-Elemente im Container werden umgebrochen */
+  justify-content: flex-start; /* Ausrichtung der Flex-Elemente im Flex-Container steuern -> flex-start an die Hauptachse (linksbündig)*/
+}
+
+main {
+  width: 75%;
+}
+
+aside {
+  width: 25%;
+}
+#flexbox {
+  display: flex;
+}

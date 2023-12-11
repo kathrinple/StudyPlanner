@@ -2,21 +2,12 @@ body {
   font-family: "Helvetica", "Helvetica Neue", "Arial", sans-serif; /* Schriftart festlegen */
 }
 
-/* Logo und Titel nebeneinander positionieren */
 header {
-  display: flex;
-  align-items: center;
   background-color: white;
 }
 
 header img {
   margin-right: 10px;
-}
-
-/* Scrollverhalten für die Navbar */
-nav {
-  position: sticky;
-  top: 5px;
 }
 
 /* Überschriften */
@@ -47,15 +38,22 @@ button {
 
 /* NavBar */
 nav {
+  position: sticky; /* Scrollverhalten für die Navbar */
+  top: 5px;
+
   text-align: center;
   border-radius: 5px;
-  width: 60%; /* Breite des nav-Bereichs */
-  margin: 0 auto; /* Auto-Margin für die Zentrierung */
-  display: flex; /* Macht nav zu einem Flex-Container */
-  flex-wrap: wrap; /* Flex-Elemente im Container werden umgebrochen */
-  justify-content: flex-start; /* Ausrichtung der Flex-Elemente im Flex-Container steuern -> flex-start an die Hauptachse (linksbündig)*/
+  width: 70%; /* Breite des nav-Bereichs */
+  margin: 0 auto 30px; /* Auto-Margin für die Zentrierung */
 }
+#navbar {
+  height: 50px;
+
+  background-color: aquamarine;
+}
+
 nav a {
+  font-size: 16px;
   background-color: #003366;
   height: 20px;
   width: 200px;
@@ -64,11 +62,13 @@ nav a {
   padding: 10px;
   margin: 5px;
   display: inline-block; /* Macht die Links zu Blockelementen, um Breite und Höhe anzupassen */
+  transition: background-color 0.3s, font-size 0.3s; /*Übergang der Schrift und Farbe langsamer*/
+  text-align: center;
 }
 
 nav a:hover {
   background-color: #078eee; /* Hintergrundfarbe beim Hover */
-  font-size: 20px; /* Schriftgröße beim Hover */
+  font-size: 18px; /* Schriftgröße beim Hover */
 }
 
 /* Formatierung der Tabellenzeilen Planseite_table  */

@@ -6,119 +6,124 @@
     <title>Semesterplan erstellen (2/2)</title>
     <link rel="stylesheet" type="text/css" href="assets/css/styles.css" />
     <link rel="stylesheet" type="text/css" href="assets/css/forms.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/grid.css" />
   </head>
 
   <body>
-    <header>
-      <img
-        src="assets/img/logo_apple.png"
-        alt="logo_apple"
-        width="100"
-        height="130"
-      />
-      <h1>Web-Anwendung für Semesterpläne</h1>
-    </header>
+    <div id="grid">
+      <header>
+        <img
+          src="assets/img/logo_apple.png"
+          alt="logo_apple"
+          width="100"
+          height="130"
+        />
+        <h1>Web-Anwendung für Semesterpläne</h1>
+      </header>
 
-    <nav>
-      <a href="index.html">Startseite</a>
-      <a href="plan.html">Semesterpläne</a>
-      <a href="kurs.html">Kursdetails</a>
-      <a href="plan-neu-schritt1.html">Semesterplan erstellen</a>
-    </nav>
-    <main>
-      <!-- Hauptinhalt der Seite -->
-      <h1>Semesterplan erstellen (2/2)</h1>
+      <div id="navbar">
+        <nav>
+          <a href="index.html">Startseite</a>
+          <a href="plan.html">Semesterpläne</a>
+          <a href="kurs.html">Kursdetails</a>
+          <a href="plan-neu-schritt1.html">neuer Semsterplan</a>
+        </nav>
+      </div>
+      <main>
+        <!-- Hauptinhalt der Seite -->
+        <h1>Semesterplan erstellen (2/2)</h1>
 
-      <form
-        action="https://labs.inf.fh-dortmund.de/planService/testCreatePlan.php"
-        method="post"
-      >
-        <fieldset>
-          <legend>Basisdaten</legend>
-          <div class="input-field">
-            <label for="name">Name:</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              pattern="[a-zA-Z0-9-]+"
-              maxlength="150"
-              placeholder="Maximal 150 Zeichen"
-              required
-            />
-          </div>
-        </fieldset>
+        <form
+          action="https://labs.inf.fh-dortmund.de/planService/testCreatePlan.php"
+          method="post"
+        >
+          <fieldset>
+            <legend>Basisdaten</legend>
+            <div class="input-field">
+              <label for="name">Name:</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                pattern="[a-zA-Z0-9-]+"
+                maxlength="150"
+                placeholder="Maximal 150 Zeichen"
+                required
+              />
+            </div>
+          </fieldset>
 
-        <fieldset>
-          <legend><label for="semester">Semester</label></legend>
-          <select id="semester" name="semester">
-            <option value="Sommersemester" selected>Sommersemester</option>
-            <option value="Wintersemester">Wintersemester</option>
-          </select>
+          <fieldset>
+            <legend><label for="semester">Semester</label></legend>
+            <select id="semester" name="semester">
+              <option value="Sommersemester" selected>Sommersemester</option>
+              <option value="Wintersemester">Wintersemester</option>
+            </select>
 
-          <div class="input-field">
-            <label for="jahr">Jahr:</label>
-            <input
-              type="number"
-              id="jahr"
-              name="jahr"
-              required
-              min="1900"
-              max="2099"
-              value="2023"
-              placeholder="YYYY"
-            />
-          </div>
-        </fieldset>
+            <div class="input-field">
+              <label for="jahr">Jahr:</label>
+              <input
+                type="number"
+                id="jahr"
+                name="jahr"
+                required
+                min="1900"
+                max="2099"
+                value="2023"
+                placeholder="YYYY"
+              />
+            </div>
+          </fieldset>
 
-        <fieldset>
-          <legend><label>Kurse</label></legend>
-          <p>
-            <input
-              type="checkbox"
-              id="checkbox_web-tech"
-              name="kurse"
-              value="web-tech"
-            />
-            <label for="checkbox_web-tech">Web-Technologien</label>
-            <input
-              type="checkbox"
-              id="checkbox_datenbanken"
-              name="kurse"
-              value="datenbanken"
-            />
-            <label for="checkbox_datenbanken">Datenbanken</label>
-            <input
-              type="checkbox"
-              id="checkbox_algorithmen"
-              name="kurse"
-              value="algorithmen"
-            /><label for="checkbox_algorithmen">Algorithmen</label>
-            <!-- Weitere Kurse hier -->
-          </p>
-        </fieldset>
+          <fieldset>
+            <legend><label>Kurse</label></legend>
+            <p>
+              <input
+                type="checkbox"
+                id="checkbox_web-tech"
+                name="kurse"
+                value="web-tech"
+              />
+              <label for="checkbox_web-tech">Web-Technologien</label>
+              <input
+                type="checkbox"
+                id="checkbox_datenbanken"
+                name="kurse"
+                value="datenbanken"
+              />
+              <label for="checkbox_datenbanken">Datenbanken</label>
+              <input
+                type="checkbox"
+                id="checkbox_algorithmen"
+                name="kurse"
+                value="algorithmen"
+              /><label for="checkbox_algorithmen">Algorithmen</label>
+              <!-- Weitere Kurse hier -->
+            </p>
+          </fieldset>
 
-        <button type="submit">Absenden</button>
-      </form>
-    </main>
-    <hr />
-    <aside>
-      <h2>Aktuelle Meldung</h2>
-      <ul>
-        <li>
-          22.05.2025: Die Vorlesung zu "Web-Technologien" findet am kommenden
-          Mittwoch abweichend in der Westfalenhalle 1 statt.
-        </li>
-        <li>
-          16.04.2025: Die Veranstaltung "Lineare Algebra" muss in dieser Woche
-          leider krankheitsbedingt entfallen.
-        </li>
-        <!-- Weitere Meldungen hier -->
-      </ul>
-    </aside>
+          <button type="submit">Absenden</button>
+        </form>
+      </main>
 
-    <footer>
-      <p>&copy; 2023 Soufian Bouzarrag, Kathrin Pleuger, Hüseyin Türk</p>
-    </footer>
+      <aside>
+        <h2>Aktuelle Meldung</h2>
+        <ul>
+          <li>
+            22.05.2025: Die Vorlesung zu "Web-Technologien" findet am kommenden
+            Mittwoch abweichend in der Westfalenhalle 1 statt.
+          </li>
+          <li>
+            16.04.2025: Die Veranstaltung "Lineare Algebra" muss in dieser Woche
+            leider krankheitsbedingt entfallen.
+          </li>
+          <!-- Weitere Meldungen hier -->
+        </ul>
+      </aside>
+
+      <footer>
+        <p>&copy; 2023 Soufian Bouzarrag, Kathrin Pleuger, Hüseyin Türk</p>
+      </footer>
+    </div>
   </body>
 </html>
