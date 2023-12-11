@@ -7,6 +7,7 @@
     "footer footer";
   grid-template-columns: 75% 25%;
 }
+
 header {
   grid-area: header;
   display: grid;
@@ -22,6 +23,7 @@ header h1 {
   grid-column: 2;
   justify-self: start;
 }
+
 nav {
   grid-area: nav;
   display: grid;
@@ -31,6 +33,7 @@ nav {
   gap: 5px;
   justify-items: center;
 }
+
 main {
   grid-area: haupt;
 }

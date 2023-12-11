@@ -38,12 +38,12 @@ button {
 
 /* NavBar */
 nav {
-  height: 50px;
   background-color: white;
   position: sticky; /* Scrollverhalten für die Navbar */
   top: 0px;
   width: 100%; /* Breite des nav-Bereichs */
   margin-bottom: 30px;
+  padding: 5px;
 }
 
 nav a {

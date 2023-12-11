@@ -9,7 +9,7 @@ nav {
   flex-wrap: wrap; /* Flex-Elemente im Container werden umgebrochen */
   gap: 5px;
   align-items: center;
-  justify-content: center; /* Ausrichtung der Flex-Elemente im Flex-Container steuern -> flex-start an die Hauptachse (linksbündig)*/
+  justify-content: center;
 }
 
 main {
@@ -19,6 +19,7 @@ main {
 aside {
   width: 25%;
 }
+
 #flexbox {
   display: flex;
 }
