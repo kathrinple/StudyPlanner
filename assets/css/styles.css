@@ -49,17 +49,23 @@ button {
 nav {
   text-align: center;
   border-radius: 5px;
-  width: 35%;
+  width: 60%; /* Breite des nav-Bereichs */
   margin: 0 auto; /* Auto-Margin für die Zentrierung */
+  display: flex; /* Macht nav zu einem Flex-Container */
+  flex-wrap: wrap; /* Flex-Elemente im Container werden umgebrochen */
+  justify-content: flex-start; /* Ausrichtung der Flex-Elemente im Flex-Container steuern -> flex-start an die Hauptachse (linksbündig)*/
 }
 nav a {
   background-color: #003366;
+  height: 20px;
+  width: 200px;
   color: white;
   text-decoration: none;
   padding: 10px;
-  margin-right: 5px;
+  margin: 5px;
   display: inline-block; /* Macht die Links zu Blockelementen, um Breite und Höhe anzupassen */
 }
+
 nav a:hover {
   background-color: #078eee; /* Hintergrundfarbe beim Hover */
   font-size: 20px; /* Schriftgröße beim Hover */
