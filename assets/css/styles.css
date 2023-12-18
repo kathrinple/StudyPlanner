@@ -8,6 +8,8 @@ header {
 
 header img {
   margin-right: 10px;
+  max-width: 100%; /* Flexible Bilder */
+  height: auto;
 }
 
 /* Überschriften */
