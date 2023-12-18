@@ -28,15 +28,14 @@ header h1 {
   justify-self: start;
 }
 
-/* NavBar-Styling */
 nav {
   grid-area: nav;
   display: grid;
-  justify-content: center;
   align-items: center;
+  justify-content: start;
   grid-auto-flow: column; /* NavBar in einer Zeile anzeigen */
   gap: 5px; /* Abstand zwischen den NavLinks */
-  justify-items: center;
+  justify-items: start;
 }
 
 /* Hauptinhalt in grid template benennen */
@@ -55,23 +54,68 @@ footer {
 }
 
 /* Media Queries */
-/* Media Query für kleine Bildschirme (max-width: 900px) */
-@media screen and (max-width: 900px) {
-  nav {
-    grid-auto-flow: row; /* NavBar in einer Spalte anzeigen */
-    grid-template-columns: repeat(
-      3,
-      auto
-    ); /* 3 NavLinks pro Zeile => 3 Spalten */
+/* Media Query für Bildschirme min-width 1025px */
+@media screen and (min-width: 1025px) {
+  #grid {
+    grid-template-areas:
+      "header nav nav"
+      "haupt haupt aside"
+      "footer footer footer";
+    grid-template-columns: 25% 50% 25%;
   }
 }
 
-/* Media Query für noch kleinere Bildschirme (max-width: 700px) */
-@media screen and (max-width: 700px) {
+/* Media Query für kleine Bildschirme (max-width: 768px) */
+@media screen and (max-width: 768px) {
+  #grid {
+    grid-template-areas:
+      "header"
+      "nav"
+      "haupt"
+      "aside"
+      "footer";
+    grid-template-columns: 100%;
+  }
+
+  header img {
+    max-width: 70%;
+    height: auto;
+  }
+
+  header h1 {
+    font-size: 1rem;
+  }
+
   nav {
+    grid-auto-flow: row; /* NavBar in einer Spalte anzeigen */
     grid-template-columns: repeat(
       2,
       auto
     ); /* 2 NavLinks pro Zeile => 2 Spalten */
+  }
+}
+
+/* Media Query für noch kleinere Bildschirme (max-width: 480px) */
+@media screen and (max-width: 480px) {
+  header img {
+    max-width: 60%;
+    height: auto;
+  }
+
+  header h1 {
+    font-size: 0.9rem;
+  }
+
+  nav {
+    justify-content: center;
+    grid-template-columns: 1fr;
+  }
+
+  nav a {
+    width: 100%;
+  }
+
+  aside {
+    display: none;
   }
 }
