@@ -9,7 +9,7 @@ nav {
   flex-wrap: wrap; /* Flex-Elemente im Container werden umgebrochen */
   gap: 5px;
   align-items: center;
-  justify-content: center;
+  justify-content: start; /* Ausrichtung der Flex-Elemente im Flex-Container steuern -> flex-start an die Hauptachse (linksbündig)*/
 }
 
 main {
@@ -22,4 +22,77 @@ aside {
 
 #flexbox {
   display: flex;
+}
+
+@media screen and (min-width: 1025px) {
+  #header-nav {
+    display: flex;
+    flex-direction: row;
+  }
+
+  header {
+    width: 30%;
+  }
+
+  nav {
+    flex-wrap: nowrap;
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  nav {
+    flex-wrap: nowrap;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  header img {
+    max-width: 10%;
+    height: auto;
+  }
+
+  header h1 {
+    font-size: 1rem;
+  }
+
+  nav {
+    flex-wrap: wrap;
+  }
+
+  #flexbox {
+    flex-direction: column;
+  }
+
+  main,
+  aside {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  header img {
+    max-width: 10%;
+    height: auto;
+  }
+
+  header h1 {
+    font-size: 0.9rem;
+  }
+
+  nav {
+    flex-wrap: wrap;
+  }
+
+  nav a {
+    width: 100%;
+  }
+
+  #flexbox {
+    flex-direction: column;
+  }
+
+  aside {
+    display: none;
+  }
 }
