@@ -1,9 +1,9 @@
 body {
-  font-family: "Helvetica", "Helvetica Neue", "Arial", sans-serif; /* Schriftart festlegen */
+  font-family: "Helvetica", "Helvetica Neue", "Arial", sans-serif; /* Schriftart festlegen fü den ganzen body */
 }
 
 header {
-  background-color: white;
+  background-color: white; /* Hintergrundfarbe für header*/
 }
 
 header img {
@@ -57,7 +57,7 @@ nav a {
   padding: 10px;
   display: inline-block; /* Macht die Links zu Blockelementen, um Breite und Höhe anzupassen */
   transition: background-color 0.3s, font-size 0.3s; /*Übergang der Schrift und Farbe langsamer*/
-  text-align: center;
+  text-align: center; /*Zentriert*/
 }
 
 nav a:hover {
@@ -110,7 +110,7 @@ aside ul {
 /* Footer */
 footer {
   text-align: center;
-  position: sticky;
+  position: sticky; /*Footer bleibt am unteren Rand beim scrollen*/
   bottom: 0;
   background-color: white;
   width: 100%;
