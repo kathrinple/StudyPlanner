@@ -31,16 +31,20 @@
         <!-- Hauptinhalt der Seite -->
         <h1>Semesterplan erstellen (1/2)</h1>
 
+        <!-- Formular zur Erstellung eines neuen Semesterplans -->
         <form action="plan-neu-schritt2.html" method="get">
           <fieldset>
+            <!-- Überschrift Formulargruppe -->
             <legend>Studiengang auswählen</legend>
             <div class="input-field">
+              <!-- Beschriftung für das Auswahlfeld -->
               <label for="studiengang">Studiengang:</label>
               <select id="studiengang" name="studiengang" required>
+                <!-- Standardoption, die den Benutzer auffordert, eine Auswahl zu treffen -->
                 <option value="" disabled selected hidden>
                   Bitte auswählen
                 </option>
-                <!-- Erster Option Wert darf ein Value haben, so wird sichergestellt, dass der Benutzer eine bewusste Auswahl treffen muss -->
+                <!-- Folgende Optionen repräsentieren die verschiedenen Studiengänge -->
                 <option value="praktische-informatik">
                   Praktische Informatik
                 </option>
@@ -72,6 +76,7 @@
               </select>
             </div>
           </fieldset>
+          <!-- Absenden-Button des Formulars -->
           <button type="submit">Weiter</button>
         </form>
       </main>
