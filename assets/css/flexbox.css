@@ -1,7 +1,7 @@
 /* Logo und Titel nebeneinander positionieren */
 header {
   display: flex;
-  align-items: center;
+  align-items: center; /*Flex-Element wird (horizontal) zentriert*/
 }
 
 nav {
@@ -23,11 +23,11 @@ aside {
 #flexbox {
   display: flex;
 }
-
+/*  wenn die Bildschirmbreite kleiner wird, wird die Darstellung angepasst (zb anderes Ausgabegerät)*/
 @media screen and (min-width: 1025px) {
   #header-nav {
     display: flex;
-    flex-direction: row;
+    flex-direction: row; /*Flex-Elemente werden in einer horizontalen Reihe angeordnet*/
   }
 
   header {
@@ -35,7 +35,7 @@ aside {
   }
 
   nav {
-    flex-wrap: nowrap;
+    flex-wrap: nowrap; /*damit Flex-Elemente in einer einzigen Reihe bleiben*/
     width: 70%;
   }
 }
