@@ -40,6 +40,7 @@
             <legend>Basisdaten</legend>
             <div class="input-field">
               <label for="name">Name:</label>
+              <!-- Eingabe des Namens, mit min. 1 Zeichen des Patterns -->
               <input
                 type="text"
                 id="name"
@@ -54,8 +55,10 @@
 
           <fieldset>
             <legend><label for="semester">Semester</label></legend>
+            <!-- Dropdown Menü -->
             <select id="semester" name="semester">
               <option value="Sommersemester" selected>Sommersemester</option>
+              <!-- standardmäßig ausgewählt -->
               <option value="Wintersemester">Wintersemester</option>
             </select>
 
@@ -75,6 +78,7 @@
           </fieldset>
 
           <fieldset>
+            <!-- Checkboxen für Kurse -->
             <legend><label>Kurse</label></legend>
             <p>
               <input
