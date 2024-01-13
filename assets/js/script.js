@@ -186,3 +186,22 @@ for (let i = 0; i < Semesterplan.elementeSemesterplan.length; i++) {
     console.log(`\t${kurs.modulId}: ${kurs.name}`);
   }
 }
+
+const section_studien = document.querySelector("#section_studiengange ul"); //wir gehen in die id section_studiengange und dann gehen wir in die erste ul
+console.log(section_studien);
+for (let i = 0; i < Studiengang.elementeStudiengang.length; i++) {
+  const studiengang = Studiengang.elementeStudiengang[i];
+
+  console.log(studiengang);
+  const li = document.createElement("li");
+  for(let j = 0; j < studiengang.name.length: j++){
+    li.innerHTML = `<a href="#">${studiengang.name}</a> (5 Kurse, 9 Stunden)`;}
+  
+  // const span = document.createElement("span");
+  // span.innerHTML = `<b>hallo</b>`;
+  // span.textContent = "<b>hallo</b>";
+
+  // div.appendChild(span);
+
+  section_studien.appendChild(li);
+}
