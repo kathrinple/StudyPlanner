@@ -137,19 +137,21 @@ const kurs3 = new Kurs(
   lehrperson1
 );
 
+const studiengang = new Studiengang("INF", "Informatik");
+const studiengang1 = new Studiengang("WI", "Wirtschaftsinformatik");
+const studiengang2 = new Studiengang("MI", "Medizinische Informatik");
+
 const semesterplan = new Semesterplan(
   "Mein Plan",
   "WS 2023/2024",
   "Informatik"
 );
-const studiengang = new Studiengang("INF", "Informatik");
 
 const semesterplan1 = new Semesterplan(
   "Plan 1",
   "WS 2023/2024",
   "Wirtschaftsinformatik"
 );
-const studiengang1 = new Studiengang("WI", "Wirtschaftsinformatik");
 
 const semesterplan2 = new Semesterplan(
   "Plan 2",
@@ -157,10 +159,10 @@ const semesterplan2 = new Semesterplan(
   "Medizinische Informatik"
 );
 
+// Array in dem die Semesterpläne gespeichert werden
 let semesterplaene = [semesterplan, semesterplan1, semesterplan2];
 
-const studiengang2 = new Studiengang("MI", "Medizinische Informatik");
-
+// Kurse zu einem Studiengang und Semesterplan hinzufügen und sortieren
 studiengang.kurse.push(kurs1, kurs2, kurs3);
 semesterplan.addKurse([kurs1, kurs2, kurs3]);
 semesterplan.kurse.sort((kurs1, kurs2) => kurs1.modulId - kurs2.modulId);
@@ -169,39 +171,74 @@ studiengang1.kurse.push(kurs1, kurs2, kurs3);
 semesterplan1.addKurse([kurs1, kurs2, kurs3]);
 semesterplan.kurse.sort((kurs1, kurs2) => kurs1.modulId - kurs2.modulId);
 
-for (let i = 0; i < Studiengang.elementeStudiengang.length; i++) {
-  let studiengang = Studiengang.elementeStudiengang[i];
-  console.log(`${studiengang.name} (${studiengang.id})`);
-  for (let j = 0; j < studiengang.kurse.length; j++) {
-    let kurs = studiengang.kurse[j];
-    console.log(`\t${kurs.modulId}: ${kurs.name}`);
+// Funktion zum Gruppieren von Elementen in einem Array nach einer bestimmten Eigenschaft
+const gruppiereNach = (array, eigenschaft) =>
+  array.reduce((ergebnis, element) => {
+    if (!ergebnis[element[eigenschaft]]) {
+      ergebnis[element[eigenschaft]] = [];
+    }
+    ergebnis[element[eigenschaft]].push(element);
+    return ergebnis;
+  }, {});
+
+// Semesterpläne nach Studiengang gruppieren
+let gruppiertePlaene = gruppiereNach(semesterplaene, "studiengang");
+
+// HTML-Bereich für die Anzeige der Studiengänge -> section_studiengaenge
+const section_studien = document.querySelector("#section_studiengange");
+// durch jede Gruppe von Semesterplänen iterieren (gruppiert nach Studiengang)
+for (let gruppe in gruppiertePlaene) {
+  // <h2> Element für den Studiengang als Überschrift erstellen
+  const h2 = document.createElement("h2");
+  h2.innerHTML = `${gruppe}`;
+  section_studien.appendChild(h2);
+
+  // <ul> Liste für die Semesterpläne des Studiengangs erstellen
+  const ul = document.createElement("ul");
+  // durch jeden Semesterplan in der aktuellen Gruppe iterieren
+  for (let plan of gruppiertePlaene[gruppe]) {
+    // <li> Element für jeden Semesterplan erstellen
+    const li = document.createElement("li");
+
+    // <li> Element mit Informationen über den Semesterplan füllen
+    li.innerHTML = `<a href="plan.html">${
+      plan.name
+    }</a> (${plan.getAnzahlKurse()} Kurse, ${plan.getAnzahlStunden()} Stunden)`;
+
+    // <li> Element zur <ul> Liste hinzufügen
+    ul.appendChild(li);
   }
+  // <ul> Liste mit den Semesterplänen zum HTML-Bereich hinzufügen
+  section_studien.appendChild(ul);
 }
 
-for (let i = 0; i < Semesterplan.elementeSemesterplan.length; i++) {
-  let semesterplan = Semesterplan.elementeSemesterplan[i];
-  console.log(`${semesterplan.name} (${semesterplan.semester})`);
-  for (let j = 0; j < semesterplan.kurse.length; j++) {
-    let kurs = semesterplan.kurse[j];
-    console.log(`\t${kurs.modulId}: ${kurs.name}`);
+// Semesterpläne nach Semester gruppieren
+let gruppiertePlaene1 = gruppiereNach(semesterplaene, "semester");
+
+// HTML-Bereich für die Anzeige der Semesterpläne -> section_semester
+const section_semester = document.querySelector("#section_semester");
+// durch jede Gruppe von Semesterplänen iterieren (gruppiert nach Semester)
+for (let gruppe in gruppiertePlaene1) {
+  // <h2> Element für das Semester als Überschrift erstellen
+  const h2 = document.createElement("h2");
+  h2.innerHTML = `${gruppe}`;
+  section_semester.appendChild(h2);
+
+  // <ul> Liste für die Semesterpläne des Studiengangs erstellen
+  const ul = document.createElement("ul");
+  // durch jeden Semesterplan in der aktuellen Gruppe iterieren
+  for (let plan of gruppiertePlaene1[gruppe]) {
+    // <li> Element für jeden Semesterplan erstellen
+    const li = document.createElement("li");
+
+    // <li> Element mit Informationen über den Semesterplan füllen
+    li.innerHTML = `<a href="plan.html">${
+      plan.name
+    }</a> (${plan.getAnzahlKurse()} Kurse, ${plan.getAnzahlStunden()} Stunden)`;
+
+    // <li> Element zur <ul> Liste hinzufügen
+    ul.appendChild(li);
   }
-}
-
-const section_studien = document.querySelector("#section_studiengange ul"); //wir gehen in die id section_studiengange und dann gehen wir in die erste ul
-console.log(section_studien);
-for (let i = 0; i < Studiengang.elementeStudiengang.length; i++) {
-  const studiengang = Studiengang.elementeStudiengang[i];
-
-  console.log(studiengang);
-  const li = document.createElement("li");
-  for(let j = 0; j < studiengang.name.length: j++){
-    li.innerHTML = `<a href="#">${studiengang.name}</a> (5 Kurse, 9 Stunden)`;}
-  
-  // const span = document.createElement("span");
-  // span.innerHTML = `<b>hallo</b>`;
-  // span.textContent = "<b>hallo</b>";
-
-  // div.appendChild(span);
-
-  section_studien.appendChild(li);
+  // <ul> Liste mit den Semesterplänen zum HTML-Bereich hinzufügen
+  section_semester.appendChild(ul);
 }
