@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="assets/css/styles.css" />
     <link rel="stylesheet" type="text/css" href="assets/css/flexbox.css" />
     <script src="assets/js/script.js"></script>
+    <script src="assets/js/index.js" defer></script> <!-- defer = Wartet bis der gesamte Body geladen ist -->
   </head>
 
   <body>
@@ -41,7 +42,21 @@
         <!-- Hauptinhalt der Seite -->
         <h2>Semesterpläne</h2>
 
-        <section>
+
+        <legend>Studiengang auswählen</legend>
+        <div class="input-field">
+          <!-- Beschriftung für das Auswahlfeld -->
+          <label for="dropdown">Pläne gruppieren nach:</label>
+          <select id="dropdown" name="dropdown" required>
+            <!-- Standardoption, die den Benutzer auffordert, eine Auswahl zu treffen -->
+            <option value="semester" selected>Semester</option>
+              <!-- standardmäßig ausgewählt -->
+            <option value="studiengang">
+              Studiengang
+            </option>
+          </select>
+
+        <section id="section_semester">
           <h2>Semester 1</h2>
           <ul>
             <li>
@@ -53,9 +68,9 @@
             <!-- Weitere Semesterpläne hier -->
           </ul>
         </section>
-        <hr />
-        <section>
-          <h2>Semester 2</h2>
+
+        <section id="section_studiengange" class="hidden">
+          <h2>Studiengang</h2>
           <ul>
             <li><a href="#">WI-Plan</a> (5 Kurse, 9 Stunden)</li>
             <li><a href="#">MI-Plan</a> (5 Kurse, 9 Stunden)</li>

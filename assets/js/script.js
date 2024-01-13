@@ -140,16 +140,26 @@ const kurs3 = new Kurs(
 const semesterplan = new Semesterplan(
   "Mein Plan",
   "WS 2023/2024",
-  "Wirtschaftsinformatik"
+  "Informatik"
 );
-const studiengang = new Studiengang("WI", "Wirtschaftsinformatik");
+const studiengang = new Studiengang("INF", "Informatik");
 
 const semesterplan1 = new Semesterplan(
-  "Mein Plan",
+  "Plan 1",
   "WS 2023/2024",
   "Wirtschaftsinformatik"
 );
 const studiengang1 = new Studiengang("WI", "Wirtschaftsinformatik");
+
+const semesterplan2 = new Semesterplan(
+  "Plan 2",
+  "SS 2023/2024",
+  "Medizinische Informatik"
+);
+
+let semesterplaene = [semesterplan, semesterplan1, semesterplan2];
+
+const studiengang2 = new Studiengang("MI", "Medizinische Informatik");
 
 studiengang.kurse.push(kurs1, kurs2, kurs3);
 semesterplan.addKurse([kurs1, kurs2, kurs3]);
