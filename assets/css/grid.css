@@ -1,25 +1,25 @@
 /* Das Gesamt-Grid-Layout */
 #grid {
-  display: grid;
+  display: grid; /* Grid-Layout aktivieren */
   grid-template-areas:
     "header header"
     "nav nav"
     "haupt aside"
-    "footer footer";
-  grid-template-columns: 75% 25%;
+    "footer footer"; 
+  grid-template-columns: 75% 25%; /* Aufteilung Spalte */
 }
 
 /* Header-Styling */
 header {
-  grid-area: header;
-  display: grid;
+  grid-area: header; 
+  display: grid; /* Grid-Layout für den Header aktivieren */
   grid-template-columns: auto 1fr;
   align-items: center;
 }
 
 /* Logo links im Header */
 header img {
-  grid-column: 1;
+  grid-column: 1; /
 }
 
 /* Überschrift rechts im Header */
@@ -31,26 +31,23 @@ header h1 {
 nav {
   grid-area: nav;
   display: grid;
-  align-items: center;
+  align-items: center; 
   justify-content: start;
-  grid-auto-flow: column; /* NavBar in einer Zeile anzeigen */
-  gap: 5px; /* Abstand zwischen den NavLinks */
-  justify-items: start;
+  grid-auto-flow: column; 
+  gap: 5px;
+  justify-items: start; /* Links-Ausrichtung der einzelnen Navigationselemente */
 }
 
-/* Hauptinhalt in grid template benennen */
 main {
-  grid-area: haupt;
+  grid-area: haupt; /* Festlegen des Rasterbereichs für den Hauptinhalt */
 }
 
-/* SideBar in grid template benennen */
 aside {
-  grid-area: aside;
+  grid-area: aside; /* Festlegen des Rasterbereichs für die Sidebar */
 }
 
-/* Footer in grid template benennen */
 footer {
-  grid-area: footer;
+  grid-area: footer; /* Festlegen des Rasterbereichs für den Footer */
 }
 
 /* Media Queries */
@@ -60,7 +57,7 @@ footer {
     grid-template-areas:
       "header nav nav"
       "haupt haupt aside"
-      "footer footer footer";
+      "footer footer footer"; /* Anpassung der Bereiche im Raster */
     grid-template-columns: 25% 50% 25%;
   }
 }
@@ -73,13 +70,13 @@ footer {
       "nav"
       "haupt"
       "aside"
-      "footer";
+      "footer"; 
     grid-template-columns: 100%;
   }
 
   header img {
-    max-width: 70%;
-    height: auto;
+    max-width: 70%; /* Anpassung der maximalen Breite des Logos */
+    height: auto; 
   }
 
   header h1 {
@@ -87,28 +84,25 @@ footer {
   }
 
   nav {
-    grid-auto-flow: row; /* NavBar in einer Spalte anzeigen */
-    grid-template-columns: repeat(
-      2,
-      auto
-    ); /* 2 NavLinks pro Zeile => 2 Spalten */
+    grid-auto-flow: row; /* Anordnen der Navigationselemente in Spalte */
+    grid-template-columns: repeat(2, auto); /* 2 NavLinks pro Zeile => 2 Spalten */
   }
 }
 
 /* Media Query für noch kleinere Bildschirme (max-width: 480px) */
 @media screen and (max-width: 480px) {
   header img {
-    max-width: 60%;
+    max-width: 60%; 
     height: auto;
   }
 
   header h1 {
-    font-size: 0.9rem;
+    font-size: 0.9rem; 
   }
 
   nav {
     justify-content: center;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Eine einzige Spalte für noch kleinere Bildschirme */
   }
 
   nav a {
@@ -116,6 +110,6 @@ footer {
   }
 
   aside {
-    display: none;
+    display: none; /* Ausblenden der Sidebar*/
   }
 }
