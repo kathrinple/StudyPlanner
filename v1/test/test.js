@@ -7,6 +7,7 @@ const server = http.createServer(function (request, response) {
   response.writeHead(200, { "content-type": "text/html; charset=utf-8" });
 
   const studiengaenge = persistence.holeAlleStudiengaenge();
+
   let html = `<!DOCTYPE html>
     <html>
         <head>
@@ -18,8 +19,10 @@ const server = http.createServer(function (request, response) {
 
   studiengaenge.forEach((studiengang) => {
     html += `<h2>${studiengang.name} (${studiengang.id})</h2>`;
-    console.log(`${studiengang.kurse.length} Kurse enthalten`);
-    html += `<p>${studiengang.kurse.length} Kurse enthalten:</p>`;
+    console.log(studiengaenge);
+    html += `<p>${
+      persistence.ermittleStudiengangZuId(studiengang.id).kurse.length
+    } Kurse enthalten:</p>`;
     html += `<ul>`;
     studiengang.kurse.forEach((kurs) => {
       html += `<li>${kurs.modulId} ${kurs.name} [${kurs.typ}] (${kurs.lehrperson.nachname})</li>`;

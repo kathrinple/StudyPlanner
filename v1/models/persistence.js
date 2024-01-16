@@ -54,7 +54,8 @@ function ermittleStudiengangZuId(id) {
   return lehrangebot.find((studiengang) => studiengang.id == id);
 }
 
-function ermittleKursZuStudiengangUndId(studiengang, kursId) {
+function ermittleKursZuStudiengangUndId(studiengangId, kursId) {
+  const studiengang = ermittleStudiengangZuId(studiengangId);
   if (studiengang.kurse) {
     return studiengang.kurse.find((kurs) => kurs.id == kursId);
   } else {
