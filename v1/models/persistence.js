@@ -1,7 +1,10 @@
 const fetcher = require("../models/scheduleFetcher");
 
 // [TODO]
-// Weitere benoetigte Module einbinden
+const Studiengang = require("../models/studiengang");
+const Kurs = require("../models/kurs");
+const Lehrperson = require("../models/lehrperson");
+const Termin = require("../models/termin");
 
 const lehrangebot = [];
 
@@ -47,7 +50,25 @@ const initialisiereLehrangebot = () => {
 
 // [TODO]
 // Weitere Funktionen aus der Aufgabenstellung implementieren
+function ermittleStudiengangZuId(id) {
+  return lehrangebot.find((studiengang) => studiengang.id == id);
+}
+
+function ermittleKursZuStudiengangUndId(studiengang, kursId) {
+  return studiengang.kurse.find((kurs) => kurs.id == kursId);
+}
+
+function holeAlleStudiengaenge(Studiengang) {
+  return lehrangebot;
+}
 
 // [TODO]
 // Schnittstelle des Moduls definieren: Lehrangebot-Array und Funktionen
 // von aussen zugreifbar machen
+module.exports = {
+  lehrangebot,
+  initialisiereLehrangebot,
+  ermittleStudiengangZuId,
+  ermittleKursZuStudiengangUndId,
+  holeAlleStudiengaenge,
+};
