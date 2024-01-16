@@ -27,7 +27,12 @@ class Kurs {
   }
 
   get id() {
-    return [modulId, termin.wochentag, termin.beginn, termin.raum].join("");
+    return [
+      this.modulId,
+      this.termin.wochentag,
+      this.termin.beginn,
+      this.termin.raum,
+    ].join("");
   }
 
   istValiderTyp(typ) {

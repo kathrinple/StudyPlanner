@@ -55,10 +55,15 @@ function ermittleStudiengangZuId(id) {
 }
 
 function ermittleKursZuStudiengangUndId(studiengang, kursId) {
-  return studiengang.kurse.find((kurs) => kurs.id == kursId);
+  if (studiengang.kurse) {
+    return studiengang.kurse.find((kurs) => kurs.id == kursId);
+  } else {
+    console.log(`Studiengang ${studiengang.id} hat keine Kurse.`);
+    return null;
+  }
 }
 
-function holeAlleStudiengaenge(Studiengang) {
+function holeAlleStudiengaenge() {
   return lehrangebot;
 }
 
