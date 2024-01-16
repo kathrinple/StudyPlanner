@@ -8,6 +8,8 @@ const Termin = require("../models/termin");
 
 const lehrangebot = [];
 
+const semesterplaene = [];
+
 /**
  * Initialisiert die Daten der Anwendung, also die verfuegbaren Studiengaenge mit den
  * zugehoerigen Kursen. Die Daten werden zunaechst asynchron über das scheduleFetcher-Modul
@@ -68,6 +70,39 @@ function holeAlleStudiengaenge() {
   return lehrangebot;
 }
 
+function erstelleSemesterplan(name, semester, jahr, studiengangId, kurse) {
+  const semesterplan = {
+    name: name,
+    semester: semester,
+    jahr: jahr,
+    studiengangId: studiengangId,
+    kurse: kurse,
+  };
+  semesterplaene.push(semesterplan);
+  return semesterplan;
+}
+
+function ermittleSemesterplanZuId(id) {
+  return semesterplaene.find((semesterplan) => semesterplan.id === id);
+}
+
+const gruppiereNach = (array, eigenschaft) =>
+  array.reduce((ergebnis, element) => {
+    if (!ergebnis[element[eigenschaft]]) {
+      ergebnis[element[eigenschaft]] = [];
+    }
+    ergebnis[element[eigenschaft]].push(element);
+    return ergebnis;
+  }, {});
+
+function holePlaeneGruppiertNachSemester() {
+  return gruppiereNach(semesterplaene, "semester");
+}
+
+function holePlaeneGruppiertNachStudiengang() {
+  return gruppiereNach(semesterplaene, "studiengang");
+}
+
 // [TODO]
 // Schnittstelle des Moduls definieren: Lehrangebot-Array und Funktionen
 // von aussen zugreifbar machen
@@ -77,4 +112,8 @@ module.exports = {
   ermittleStudiengangZuId,
   ermittleKursZuStudiengangUndId,
   holeAlleStudiengaenge,
+  erstelleSemesterplan,
+  ermittleSemesterplanZuId,
+  holePlaeneGruppiertNachSemester,
+  holePlaeneGruppiertNachStudiengang,
 };
