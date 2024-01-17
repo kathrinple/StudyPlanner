@@ -1,10 +1,10 @@
 class Studiengang {
   static elementeStudiengang = [];
 
-  constructor(id, name) {
+  constructor(id, name, kurse) {
     this.id = id;
     this.name = name;
-    this.kurse = [];
+    this.kurse = kurse;
     Studiengang.elementeStudiengang.push(this);
   }
 

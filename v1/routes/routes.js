@@ -55,6 +55,7 @@ router.get("/neu", (req, res) => {
   // [TODO]
   // Schritt 1 des Formulares zum Erstellen eines neuen
   // Semesterplanes anzeigen
+  // TODO
   res.render("neu");
 });
 
@@ -66,7 +67,7 @@ router.post("/waehleStudiengang", (req, res) => {
   // dazu Schritt 2 anzeigen (z.B. nur die Kurse, die auch
   // zum gewaehlten Studiengang gehoeren)
   const studiengangId = req.body.studiengangId;
-
+  // TODO
   res.render("waehleStudiengang", { studiengangId });
 });
 

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="de">
+  <!-- Sprache -->
+  <head>
+    <!-- Metadaten: Zeichensatz und Ansichtsgröße festlegen -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Semesterpläne</title>
+
+    <!-- Verknüpfungen zu Stylesheets und Skripten -->
+    <link rel="stylesheet" type="text/css" href="assets/css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/flexbox.css" />
+    <script src="assets/js/script.js" defer></script>
+    <script src="assets/js/index.js" defer></script> <!-- defer = Wartet bis der gesamte Body geladen ist -->
+   
+  </head>
+
+  <body>
+    <div id="header-nav">
+      <header>
+        <!-- Logo mit breite und höhe-->
+        <img
+          src="assets/img/logo_apple.png"
+          alt="logo_apple"
+          width="100"
+          height="130"
+        />
+        <h1>Web-Anwendung für Semesterpläne</h1>
+      </header>
+
+      <!--Navigationsmenü: Links zu anderen Seiten (Anker-Elemente) -->
+      <nav>
+        <a href="index.html">Startseite</a>
+        <a href="plan.html">Semesterpläne</a>
+        <a href="kurs.html">Kursdetails</a>
+        <a href="plan-neu-schritt1.html">neuer Semsterplan</a>
+      </nav>
+    </div>
+
+    <!-- Flex-Container -->
+    <div id="flexbox">
+      <main>
+        <!-- Hauptinhalt der Seite -->
+        <h2>Meine Semesterpläne</h2>
+
+        <div class="input-field">
+          <!-- Beschriftung für das Auswahlfeld -->
+          <label for="dropdown">Pläne gruppieren nach:</label>
+          <select id="dropdown" name="dropdown" required>
+            <!-- Standardoption, die den Benutzer auffordert, eine Auswahl zu treffen -->
+            <option value="semester" selected>Semester</option>
+              <!-- standardmäßig ausgewählt -->
+            <option value="studiengang">
+              Studiengang
+            </option>
+          </select>
+
+        <section id="section_semester">
+        </section>
+
+        <section id="section_studiengange" class="hidden">
+        </section>
+      </main>
+
+      <aside>
+        <h2>Aktuelle Meldung</h2>
+        <ul>
+          <li>
+            <!-- Beispiel für eine Meldung -->
+            22.05.2025: Die Vorlesung zu "Web-Technologien" findet am kommenden
+            Mittwoch abweichend in der Westfalenhalle 1 statt.
+          </li>
+          <li>
+            16.04.2025: Die Veranstaltung "Lineare Algebra" muss in dieser Woche
+            leider krankheitsbedingt entfallen.
+          </li>
+          <!-- Weitere Meldungen hier -->
+        </ul>
+      </aside>
+    </div>
+    <footer>
+      <p>&copy; 2023 Soufian Bouzarrag, Kathrin Pleuger, Hüseyin Türk</p>
+    </footer>
+  </body>
+</html>

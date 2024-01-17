@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Semesterplan erstellen (1/2)</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/forms.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/grid.css" />
+  </head>
+
+  <body>
+    <div id="grid">
+      <header>
+        <img
+          src="assets/img/logo_apple.png"
+          alt="logo_apple"
+          width="100"
+          height="130"
+        />
+        <h1>Web-Anwendung für Semesterpläne</h1>
+      </header>
+      <nav>
+        <a href="index.html">Startseite</a>
+        <a href="plan.html">Semesterpläne</a>
+        <a href="kurs.html">Kursdetails</a>
+        <a href="plan-neu-schritt1.html">neuer Semesterplan</a>
+      </nav>
+
+      <main>
+        <!-- Hauptinhalt der Seite -->
+        <h1>Semesterplan erstellen (1/2)</h1>
+
+        <!-- Formular zur Erstellung eines neuen Semesterplans -->
+        <form action="plan-neu-schritt2.html" method="get">
+          <fieldset>
+            <!-- Überschrift Formulargruppe -->
+            <legend>Studiengang auswählen</legend>
+            <div class="input-field">
+              <!-- Beschriftung für das Auswahlfeld -->
+              <label for="studiengang">Studiengang:</label>
+              <select id="studiengang" name="studiengang" required>
+                <!-- Standardoption, die den Benutzer auffordert, eine Auswahl zu treffen -->
+                <option value="" disabled selected hidden>
+                  Bitte auswählen
+                </option>
+                <!-- Folgende Optionen repräsentieren die verschiedenen Studiengänge -->
+                <option value="praktische-informatik">
+                  Praktische Informatik
+                </option>
+                <option value="technische-informatik">
+                  Technische Informatik
+                </option>
+                <option value="data-science">Data Science</option>
+                <option value="medizinische-informatik">
+                  Medizinische Informatik
+                </option>
+                <option value="medizinische-informatik-dual">
+                  Medizinische Informatik dual
+                </option>
+                <option value="sst-dual-softwaretechnik">
+                  SST dual (Softwaretechnik)
+                </option>
+                <option value="sst-dual-systemtechnik">
+                  SST dual (Systemtechnik)
+                </option>
+                <option value="informatik-dual-softwaretechnik">
+                  Informatik dual (Softwaretechnik)
+                </option>
+                <option value="informatik-dual-netztechnik">
+                  Informatik dual (Netztechnik und Systemintegration)
+                </option>
+                <option value="wirtschaftsinformatik">
+                  Wirtschaftsinformatik
+                </option>
+              </select>
+            </div>
+          </fieldset>
+          <!-- Absenden-Button des Formulars -->
+          <button type="submit">Weiter</button>
+        </form>
+      </main>
+
+      <aside>
+        <h2>Aktuelle Meldung</h2>
+        <ul>
+          <li>
+            22.05.2025: Die Vorlesung zu "Web-Technologien" findet am kommenden
+            Mittwoch abweichend in der Westfalenhalle 1 statt.
+          </li>
+          <li>
+            16.04.2025: Die Veranstaltung "Lineare Algebra" muss in dieser Woche
+            leider krankheitsbedingt entfallen.
+          </li>
+          <!-- Weitere Meldungen hier -->
+        </ul>
+      </aside>
+
+      <footer>
+        <p>&copy; 2023 Soufian Bouzarrag, Kathrin Pleuger, Hüseyin Türk</p>
+      </footer>
+    </div>
+  </body>
+</html>

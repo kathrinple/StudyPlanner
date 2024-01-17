@@ -19,10 +19,7 @@ const server = http.createServer(function (request, response) {
 
   studiengaenge.forEach((studiengang) => {
     html += `<h2>${studiengang.name} (${studiengang.id})</h2>`;
-    console.log(studiengaenge);
-    html += `<p>${
-      persistence.ermittleStudiengangZuId(studiengang.id).kurse.length
-    } Kurse enthalten:</p>`;
+    html += `<p>${studiengang.kurse.length} Kurse enthalten:</p>`;
     html += `<ul>`;
     studiengang.kurse.forEach((kurs) => {
       html += `<li>${kurs.modulId} ${kurs.name} [${kurs.typ}] (${kurs.lehrperson.nachname})</li>`;
