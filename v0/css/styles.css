@@ -1,0 +1,122 @@
+body {
+  font-family: "Helvetica", "Helvetica Neue", "Arial", sans-serif; /* Schriftart festlegen fü den ganzen body */
+}
+
+header {
+  background-color: white; /* Hintergrundfarbe für header*/
+}
+
+header img {
+  margin-right: 10px;
+  max-width: 100%; /* Flexible Bilder */
+  height: auto;
+}
+
+/* Überschriften */
+h1 {
+  color: #ff8800;
+  font-size: 24px;
+  text-decoration: underline;
+}
+
+h2 {
+  color: #f59445;
+  font-size: 20px;
+}
+
+h3 {
+  color: #003366;
+  font-size: 18px;
+}
+
+h2,
+h3,
+label,
+fieldset legend,
+button {
+  font-weight: bold;
+}
+
+/* NavBar */
+nav {
+  background-color: white;
+  position: sticky; /* Scrollverhalten für die Navbar */
+  top: 0px;
+  width: 100%; /* Breite des nav-Bereichs */
+  margin-bottom: 30px;
+  padding: 5px;
+}
+
+nav a {
+  font-size: 16px;
+  background-color: #003366;
+  height: 20px;
+  width: 200px;
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  display: inline-block; /* Macht die Links zu Blockelementen, um Breite und Höhe anzupassen */
+  transition: background-color 0.3s, font-size 0.3s; /*Übergang der Schrift und Farbe langsamer*/
+  text-align: center; /*Zentriert*/
+}
+
+nav a:hover {
+  background-color: #078eee; /* Hintergrundfarbe beim Hover */
+  font-size: 18px; /* Schriftgröße beim Hover */
+}
+
+/* Formatierung der Tabellenzeilen Planseite_table  */
+/* Tabelle der gewählten Kurse */
+.Planseite_table {
+  border-collapse: collapse; /* "Zusammenführung" von Zellengrenzen -> dass benachbarte Zellengrenzen verschmelzen miteinander als eine einzige Linie dargestellt werden */
+  width: 100%;
+}
+
+.Planseite_table,
+th,
+td {
+  border: 1px solid rgb(118, 114, 114); /* Sichtbare Ränder */
+  padding: 8px;
+  text-align: left;
+}
+
+/* Farbliche Hervorhebung für jede zweite Zeile und Tabellenkopf */
+.Planseite_table tr:nth-child(even) {
+  background-color: #d4f4cb; /* Hellgraue Hintergrundfarbe */
+}
+
+.Planseite_table th {
+  text-align: center;
+  background-color: #4caf50; /* Dunkelgrüne Hintergrundfarbe für Tabellenkopf */
+  color: white; /* Weiße Schriftfarbe für Tabellenkopf */
+}
+
+/* Zusatzinformationen */
+aside {
+  background-color: #003366;
+  border-radius: 5px;
+  padding: 5px;
+  border-style: solid;
+}
+
+aside h3 {
+  color: #d87b12;
+}
+
+aside ul {
+  color: white;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  position: sticky; /*Footer bleibt am unteren Rand beim scrollen*/
+  bottom: 0;
+  background-color: white;
+  width: 100%;
+  padding: 4px;
+}
+
+.hidden {
+  display: none; /*Section für Studiengang verstecken */
+}

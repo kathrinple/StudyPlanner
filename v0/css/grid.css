@@ -1,0 +1,115 @@
+/* Das Gesamt-Grid-Layout */
+#grid {
+  display: grid; /* Grid-Layout aktivieren */
+  grid-template-areas:
+    "header header"
+    "nav nav"
+    "haupt aside"
+    "footer footer"; 
+  grid-template-columns: 75% 25%; /* Aufteilung Spalte */
+}
+
+/* Header-Styling */
+header {
+  grid-area: header; 
+  display: grid; /* Grid-Layout für den Header aktivieren */
+  grid-template-columns: auto 1fr;
+  align-items: center;
+}
+
+/* Logo links im Header */
+header img {
+  grid-column: 1; /
+}
+
+/* Überschrift rechts im Header */
+header h1 {
+  grid-column: 2;
+  justify-self: start;
+}
+
+nav {
+  grid-area: nav;
+  display: grid;
+  align-items: center; 
+  justify-content: start;
+  grid-auto-flow: column; 
+  gap: 5px;
+  justify-items: start; /* Links-Ausrichtung der einzelnen Navigationselemente */
+}
+
+main {
+  grid-area: haupt; /* Festlegen des Rasterbereichs für den Hauptinhalt */
+}
+
+aside {
+  grid-area: aside; /* Festlegen des Rasterbereichs für die Sidebar */
+}
+
+footer {
+  grid-area: footer; /* Festlegen des Rasterbereichs für den Footer */
+}
+
+/* Media Queries */
+/* Media Query für Bildschirme min-width 1025px */
+@media screen and (min-width: 1025px) {
+  #grid {
+    grid-template-areas:
+      "header nav nav"
+      "haupt haupt aside"
+      "footer footer footer"; /* Anpassung der Bereiche im Raster */
+    grid-template-columns: 25% 50% 25%;
+  }
+}
+
+/* Media Query für kleine Bildschirme (max-width: 768px) */
+@media screen and (max-width: 768px) {
+  #grid {
+    grid-template-areas:
+      "header"
+      "nav"
+      "haupt"
+      "aside"
+      "footer"; 
+    grid-template-columns: 100%;
+  }
+
+  header img {
+    max-width: 70%; /* Anpassung der maximalen Breite des Logos */
+    height: auto; 
+  }
+
+  header h1 {
+    font-size: 1rem;
+  }
+
+  nav {
+    grid-auto-flow: row; /* Anordnen der Navigationselemente in Spalte */
+    grid-template-columns: repeat(2, auto); /* 2 NavLinks pro Zeile => 2 Spalten */
+  }
+}
+
+/* Media Query für noch kleinere Bildschirme (max-width: 480px) */
+@media screen and (max-width: 480px) {
+  header img {
+    max-width: 60%; 
+    height: auto;
+  }
+
+  header h1 {
+    font-size: 0.9rem; 
+  }
+
+  nav {
+    justify-content: center;
+    grid-template-columns: 1fr; /* Eine einzige Spalte für noch kleinere Bildschirme */
+  }
+
+  nav a {
+    width: 100%;
+  }
+
+  aside {
+    display: none; /* Ausblenden der Sidebar*/
+  }
+}
